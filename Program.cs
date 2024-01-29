@@ -4,6 +4,7 @@
     {
         private static string GetCrowsWordInRightCase(int count)
         {
+            count = count > 100 ? count % 100 : count;
             count = count >= 0 && count <= 20 ? count : count % 10;
             return count switch
             {
@@ -18,7 +19,8 @@
             while (true)
             {
                 Console.WriteLine("Введите число ворон на ветке:");
-                int count = int.Parse(Console.ReadLine());
+                string scount = Console.ReadLine();
+                int count = int.Parse(scount != null && scount != "" ? scount : "0");
                 Console.WriteLine($"На ветке {count} {GetCrowsWordInRightCase(count)}");
             }
         }
