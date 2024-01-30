@@ -20,7 +20,7 @@
             {
                 Console.WriteLine("Введите число ворон на ветке:");
                 string scount = Console.ReadLine();
-                int count = int.Parse(scount != null && scount != "" ? scount : "0");
+                int count = int.Parse(String.IsNullOrEmpty(scount) ? "0" : scount);
                 Console.WriteLine($"На ветке {count} {GetCrowsWordInRightCase(count)}");
             }
         }
